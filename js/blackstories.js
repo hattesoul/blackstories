@@ -7,15 +7,15 @@ function shuffle(o) {
 
 /* sort array of objects */
 var sort_by = function(field, reverse, primer) {
-    var key = primer ? 
-    function(x) {return primer(x[field])} : 
+    var key = primer ?
+    function(x) {return primer(x[field])} :
     function(x) {return x[field]};
 
     reverse = !reverse ? 1 : -1;
 
     return function(a, b) {
         return a = key(a), b = key(b), reverse * ((a > b) - (b > a));
-    } 
+    }
 }
 
 /* filter array */
@@ -58,9 +58,10 @@ function fillGrid(data, issue, shuffle_flag) {
             var new_html = "";
             $("#grid").html(new_html);
             partFillGrid(bss_cur, index, basefill)
-            new_html = "black stories "+issue_cur+" <span class=\"caret\"></span>";
+            new_html = "black stories "+bss_cur[0].name+" <span class=\"caret\"></span>";
             $(".dropdowntitle").html(new_html);
-//            registerClickHandlers();
+            new_html = "../images/"+issue_cur+".png";
+            $(".navbar-brand img").attr("src", new_html);
         });
     } else {
         bss_cur = filter(data, issue, shuffle_flag);
@@ -69,9 +70,10 @@ function fillGrid(data, issue, shuffle_flag) {
         var new_html = "";
         $("#grid").html(new_html);
         partFillGrid(bss_cur, index, basefill)
-        new_html = "black stories "+issue_cur+" <span class=\"caret\"></span>";
+        new_html = "black stories "+bss_cur[0].name+" <span class=\"caret\"></span>";
         $(".dropdowntitle").html(new_html);
-//        registerClickHandlers();
+        new_html = "../images/"+issue_cur+".png";
+        $(".navbar-brand img").attr("src", new_html);
     }
 }
 
@@ -115,6 +117,19 @@ function partFillGrid(data, first, lines) {
     registerClickHandlers();
 }
 
+/* conceal all exposed cards */
+function conceal() {
+    $(".flipped .back .bs-inner-card").each(function(){
+        $(this).trigger("click");
+    });
+}
+
+function expose() {
+    $(".effect__click").not(".flipped").find(".front .bs-inner-card").each(function(){
+        $(this).trigger("click");
+    });
+}
+
 /* bs cards click handler */
 function registerClickHandlers() {
     /* load more content if no scroll bar */
@@ -123,10 +138,14 @@ function registerClickHandlers() {
             partFillGrid(bss_cur, index, increment);
         }
     }
-    
+
     $(".effect__click .bs-inner-card").off("click");
     $(".effect__click .bs-inner-card").click(function(event) {
         $(this).closest(".effect__click").hasClass("flipped") === true ? $(this).closest(".effect__click").removeClass("flipped") : $(this).closest(".effect__click").addClass("flipped");
+    });
+
+    $(".btn").click(function(event) {
+        $(this).trigger("blur");
     });
 
     /* adjust height to title */
@@ -153,6 +172,9 @@ $(document).ready(function () {
             $(".navbar-collapse").collapse('hide');
         }
     });
+
+    /* add tooltips */
+    $(".btn").tooltip();
 });
 
 (function(){
@@ -170,4 +192,3 @@ $(document).ready(function () {
         }
     });
 }());
-

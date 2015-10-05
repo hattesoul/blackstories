@@ -24,13 +24,15 @@
     <script src="../js/bootstrap.min.js"></script>
 
     <!-- style sheet -->
+    <link href="../css/bootstrap-table.css" rel="stylesheet">
     <link href="../css/books.css" rel="stylesheet">
     <!-- import read books data -->
     <script src="../js/books-data.js"></script>
     <!-- import read books scripts -->
+    <script src="../js/bootstrap-table.js"></script>
     <script src="../js/books.js"></script>
 
-    <link rel="icon" href="../images/books32.png" type="image/png" sizes="32x32"> 
+    <link rel="icon" href="../images/books32.png" type="image/png" sizes="32x32">
 </head>
 <body>
     <h1><img src="../images/books.png" alt="" height="64px"/> Read books</h1>
@@ -39,7 +41,28 @@
     The years of titles that I have read before 2009 are estimated.<br />
     Click on the year to expand/collapse. Use the simple search box to filter.</h4>
 
-<div class="form-group has-feedback has-clear">  
+<!--
+    data-url="../js/books.json"
+ -->
+    <table data-toggle="table"
+           data-url="../js/books.json"
+           data-search="true"
+           data-show-refresh="true"
+           data-show-toggle="true"
+           data-show-columns="true" class="table-striped">
+        <thead>
+        <tr>
+            <th data-field="year" data-sortable="true">Year</th>
+            <th data-field="title" data-sortable="true">Title</th>
+            <th data-field="author" data-sortable="true">Author</th>
+            <th data-field="thanks" data-sortable="true">Thanks to</th>
+        </tr>
+        </thead>
+    </table>
+
+
+<!--
+<div class="form-group has-feedback has-clear">
     <div class="inner-addon left-addon">
         <i class="glyphicon glyphicon-search"></i>
         <input id="search" type="text" class="form-control" id="inputClear" placeholder="Type to search/filter">
@@ -47,15 +70,17 @@
         <span class="sr-only">Clear input content</span>
     </div>
 </div>
-
+ -->
 <!--
     <input class="hasclear" type="text" id="search" placeholder="Type to search/filter">
     <span class="clearer glyphicon glyphicon-remove-circle form-control-feedback"></span>
 -->
+<!--
     <div class="panel-group" id="accordion">
         <script>
             populateList(sorted_books);
         </script>
     </div>
+-->
 </body>
 </html>

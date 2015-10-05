@@ -63,10 +63,10 @@ body {
     font-size: 12pt;
 }
 
-input, .form-control {
+input.form-control {
     margin-bottom: 10px;
-    width: 90%;
-    min-width: 600px;
+    width: 50%;
+    min-width: 300px;
 }
 
 .form-horizontal .form-group {
@@ -74,10 +74,11 @@ input, .form-control {
     margin-left: 0px;
 }
 
-table {
+.bootstrap-table {
     width: 90%;
-    margin-left: auto; 
+    margin-left: auto;
     margin-right: auto;
+    min-width: 600px;
 }
 
 th {
@@ -127,13 +128,9 @@ th, td {
   display: none;
 }
 
-.form-control-feedback {
-  right: 10%;
-}
-
 /* enable absolute positioning */
-.inner-addon { 
-    position: relative; 
+.inner-addon {
+    position: relative;
 }
 
 /* style icon */
