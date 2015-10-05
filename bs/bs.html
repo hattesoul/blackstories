@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!-- Features -->
+    <!-- pulldown menu -->
+    <!-- sort, shuffle button -->
+    <!-- scroll to top button -->
+    <!-- headroom (2015-03-03) -->
+    <!-- auto-collapse for expanded menu (2015-03-04) -->
+    <!-- 3D card flip (2015-03-07) -->
+    <!-- centered alignment for cards (2015-03-12) -->
+    <!-- original fonts (2015-03-12) -->
+    <!-- embedded fonts (2015-03-12) -->
+    <!-- adjusted text box height (2015-03-18) -->
+    <!-- cross-browser hyphenation (2015-03-14) -->
+    <!-- additional solution text (2015-03-14) -->
+    <!-- infinite scroll (2015-03-18) -->
+    <!-- password protection (in progress) -->
+    <!-- dehyphenate on copy (2015-06-14) -->
+
+    <!-- black stories #1 (2015-03-13) -->
+    <!-- black stories #2 (+0 %) -->
+    <!-- black stories #3 (+0 %) -->
+    <!-- black stories #4 (0 %) -->
+    <!-- black stories #5 (0 %) -->
+    <!-- black stories #6 (0 %) -->
+    <!-- black stories #7 (0 %) -->
+    <!-- black stories #8 (0 %) -->
+    <!-- black stories #9 (0 %) -->
+    <!-- black stories #10 (0 %) -->
+    <!-- black stories mystery edition (0 %) -->
+    <!-- black stories english edition (0 %) -->
+    <!-- black stories francaise edition (0 %) -->
+    <!-- black stories real crime edition (+0 %) -->
+    <!-- black stories movie edition (20 %) -->
+    <!-- black stories köln edition (0 %) -->
+    <!-- black stories krimi edition (0 %) -->
+    <!-- black stories funny death #1 edition (0 %) -->
+    <!-- black stories funny death #2 edition (0 %) -->
+    <!-- black stories christmas #1 edition (0 %) -->
+    <!-- black stories christmas #2 edition (0 %) -->
+    <!-- black stories holiday edition (0 %) -->
+    <!-- black stories mittelalter edition (0 %) -->
+    <!-- black stories sex and crime edition (0 %) -->
+    <!-- black stories shit happens edition (+0 %) -->
+    <!-- black stories office edition (0 %) -->
+    <!-- black stories medizin edition (0 %) -->
+    <!-- black stories dark tales edition (0 %) -->
+    <!-- black stories bibel edition (0 %) -->
+    <!-- black stories calendar 2015 (0 %) -->
+    <!-- custom stories (2) -->
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <title>black stories</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/headroom.min.js"></script>
+    <script src="../js/jquery.headroom.min.js"></script>
+
+    <!-- hyphenation -->
+    <script src="../js/hyphenator_loader.js"></script>
+    <script src="../js/hyphenator.js"></script>
+
+    <!-- sticky notes -->
+    <link href="../css/stickynotes.css" rel="stylesheet">
+    <!-- import black stories data -->
+    <script src="../js/blackstories-data.js"></script>
+    <!-- import black stories scripts -->
+    <script src="../js/blackstories.js"></script>
+
+    <link rel="icon" href="../images/logo-wo-text-quad.png" type="image/png" sizes="32x32"> 
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="navbar-brand"><img src="../images/logo-wo-text-quad.png" alt=""/><div>black stories</div></div>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <button class="dropdown-toggle btn btn-success navbar-btn" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                            <span class="dropdowntitle">black stories 1 <span class="caret"></span></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                            <li role="presentation" class="dropdown-header">originals</li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="fillGrid(bss,'1',false)">black stories 1</a></li>
+                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#" onclick="fillGrid(bss,'2',false)">black stories 2</a></li>
+                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#" onclick="fillGrid(bss,'3',false)">black stories 3</a></li>
+                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#" onclick="fillGrid(bss,'real-crime',false)">real crime edition</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="fillGrid(bss,'movie',false)">movie edition</a></li>
+                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#" onclick="fillGrid(bss,'shit-happens',false)">shit happens edition</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li role="presentation" class="dropdown-header">calendar</li>
+                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#" onclick="fillGrid(bss,'calendar-2015',false)">2015</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li role="presentation" class="dropdown-header">custom</li>
+                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#" onclick="fillGrid(bss,'custom',false)">custom stories</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <button type="button" id="sort-btn" class="btn btn-success navbar-btn" onclick="fillGrid(bss_cur,issue_cur,false)">Sort</button>
+                    </li>
+                    <li>
+                        <button type="button" id="shuffle-btn" class="btn btn-danger navbar-btn" onclick="fillGrid(bss_cur,issue_cur,true)">Shuffle</button>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <button type="button" id="top-btn" class="btn btn-success navbar-btn" onclick="$('html').animate({scrollTop:0},'slow')">&uarr;Top</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <ul id="grid">
+        <script>
+            fillGrid(bss_cur, initialissue, false);
+        </script>
+    </ul>
+    <script>
+        $(".navbar-fixed-top").headroom({
+            offset: 0,
+            tolerance: 0,
+        });
+    </script>
+</body>
+</html>

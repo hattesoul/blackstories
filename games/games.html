@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!-- Features -->
+    <!-- collapsable table (2015-06-14) -->
+    <!-- build table yearwise (2015-06-14) -->
+    <!-- realtime search and filter (2015-06-14) -->
+    <!-- dynamically striped table (2015-06-14) -->
+    <!-- dynamically book numbers per year (2015-06-14) -->
+    <!-- search box clear button (2015-06-15) -->
+    <!-- add book cover images (in progress) -->
+    <!-- password protection (in progress) -->
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <title>Read books</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!-- style sheet -->
+    <link href="../css/books.css" rel="stylesheet">
+    <!-- import read books data -->
+    <script src="../js/books-data.js"></script>
+    <!-- import read books scripts -->
+    <script src="../js/books.js"></script>
+
+    <link rel="icon" href="../images/books32.png" type="image/png" sizes="32x32"> 
+</head>
+<body>
+    <h1><img src="../images/books.png" alt="" height="64px"/> Read books</h1>
+    <h3>A list of books I have read over the years</h3>
+    <h4>The list is sorted by year, most recent at the top.<br />
+    The years of titles that I have read before 2009 are estimated.<br />
+    Click on the year to expand/collapse. Use the simple search box to filter.</h4>
+
+<div class="form-group has-feedback has-clear">  
+    <div class="inner-addon left-addon">
+        <i class="glyphicon glyphicon-search"></i>
+        <input id="search" type="text" class="form-control" id="inputClear" placeholder="Type to search/filter">
+        <span class="glyphicon glyphicon-remove-sign form-control-feedback form-control-clear" aria-hidden="true"></span>
+        <span class="sr-only">Clear input content</span>
+    </div>
+</div>
+
+<!--
+    <input class="hasclear" type="text" id="search" placeholder="Type to search/filter">
+    <span class="clearer glyphicon glyphicon-remove-circle form-control-feedback"></span>
+-->
+    <div class="panel-group" id="accordion">
+        <script>
+            populateList(sorted_books);
+        </script>
+    </div>
+    <?php
+
+phpinfo();
+
+?>
+</body>
+</html>

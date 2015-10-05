@@ -1,0 +1,10 @@
+300 DPI color scan
+saturation of yellow, green, cyan, blue, and magenta: -100
+saturation of red: 100
+contrast: ~30
+quadratic detail
+select white (threshold 15)
+grow selection: 5 px
+downscale: 512 px x 512 px, (72 DPI)
+indexed colors: optimum palette, 265 colors
+export: png, compression 9
