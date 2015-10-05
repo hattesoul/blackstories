@@ -1,7 +1,3 @@
-/*
- * read books v0.2
- * Books: 65
- */
 var books = new Array();
 books.push(new Object({issue:"2015", id:"2015-001", title:"Die Analphabetin, die rechnen konnte", author:"Jonasson, Jonas", thanks:"Susanne", prefix:""}));
 books.push(new Object({issue:"2015", id:"2015-002", title:"Die Bestimmung 01", author:"Roth, Veronica", thanks:"", prefix:""}));

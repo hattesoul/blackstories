@@ -1,12 +1,12 @@
 /* sort array of objects */
 var sort_by = function(field, reverse, primer) {
-    var key = primer ? 
-    function(x) {return primer(x[field])} : 
+    var key = primer ?
+    function(x) {return primer(x[field])} :
     function(x) {return x[field]};
     reverse = !reverse ? 1 : -1;
     return function(a, b) {
         return a = key(a), b = key(b), reverse * ((a > b) - (b > a));
-    } 
+    }
 }
 
 /* sort initial database */
@@ -133,12 +133,12 @@ $(document).ready(function () {
     var $rows = $("#table tbody tr");
     $("#search").keyup(function() {
         var val = $.trim($(this).val()).replace(/ +/g, " ").toLowerCase();
-    
+
         $rows.show().removeClass("ahidden").filter(function() {
             var text = $(this).text().replace(/\s+/g, " ").toLowerCase();
             return !~text.indexOf(val);
         }).addClass("ahidden").hide();
-        
+
         $("#table tr").not(".ahidden").each(function(index, row){
             $(row).removeClass("odd");
             if (index%2==1){ //odd row
@@ -155,7 +155,7 @@ $(document).ready(function () {
         });
     });
 
-    $('.has-clear input').on('keyup', function() {
+    $('input').on('keyup', function() {
         if ($(this).val() == '') {
             $(this).parents('.form-group').addClass('has-empty-value');
         } else {
@@ -174,5 +174,4 @@ $(document).ready(function () {
 });
 
 (function(){
-
 }());
